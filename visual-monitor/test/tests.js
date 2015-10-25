@@ -63,9 +63,22 @@ describe('Visual monitor testing', function() {
       .url(baseUrl)
       .webdrivercss(testName + '.homepage', {
         name: '1',
-        exclude: [],
-        remove: [],
-        hide: [],
+        exclude:
+          [
+            // Video.
+            '#ctl00_SPWebPartManager1_g_befc5f62_8652_4640_a506_12470a34b7c7_ctl01_banner',
+          ],
+        remove:
+          [
+            // Feedback.
+            '#nanoRepProxyContainer'
+          ],
+        hide:
+          [
+            // News.
+            '.wideCarousel',
+            '#ctl00_SPWebPartManager1_g_3a97898a_7084_4d34_b3dc_58094e3e15d8_ctl01_m_divButtons > div > div > div > div > div > div > div.BtnMiddle > table > tbody > tr > td > a'
+          ],
         screenWidth: selectedCaps == 'chrome' ? [1200] : undefined,
       }, resultsCallback)
       .call(done);
