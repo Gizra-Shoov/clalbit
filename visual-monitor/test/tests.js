@@ -61,6 +61,9 @@ describe('Visual monitor testing', function() {
   it('should show the home page',function(done) {
     client
       .url(baseUrl)
+      .execute(function() {
+        jQuery('#ctl00_SPWebPartManager1_g_bfef8587_9235_4e95_a96f_e19d2c257c0d_ctl01_banner  .banner').attr('src', 'https://cloud.githubusercontent.com/assets/5812423/12536714/b8f99e68-c2b5-11e5-978e-968251842dcc.jpg')
+      })
       .webdrivercss(testName + '.homepage', {
         name: '1',
         exclude:
