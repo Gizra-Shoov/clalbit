@@ -66,7 +66,11 @@ describe('Visual monitor testing', function() {
       })
       .webdrivercss(testName + '.homepage', {
         name: '1',
-        exclude: [],
+        exclude:
+          [
+            // Banner tabs.
+            '#ctl00_SPWebPartManager1_g_bfef8587_9235_4e95_a96f_e19d2c257c0d_ctl01_tabs input',
+          ],
         remove:
           [
             // Feedback.
